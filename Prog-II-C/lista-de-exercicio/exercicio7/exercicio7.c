@@ -1,15 +1,19 @@
 #include <stdio.h>
+#define TAMANHO 3
 
 int main(){
-    int matriz[3][3], soma;
+    int matriz[TAMANHO][TAMANHO], acima, abaixo;
 
-    for(int cont = 0; cont < 3; cont++){
-        for (int cont2 = 0; cont < 3; cont++){
-            scanf("%d", &matriz[cont][cont2]);
+    for(int x = 0; x < TAMANHO; x++){
+        for(int y = 0; y < TAMANHO; y ++){
+            scanf("%d", &matriz[x][y]);
         }
     }
     
-    soma = ((matriz[0][1] + matriz[0][2]) + matriz[1][2]);
+    acima = ((matriz[0][1] + matriz[0][2]) + matriz[1][2]);
+    abaixo = ((matriz[1][0] + matriz[2][0]) + matriz[2][1]);
 
-    printf("\nSoma: %d\n", soma);
+    printf("\nSoma dos elementos acima da diagonal principal: %d\n", acima);
+    printf("\nSoma dos elementos abaixo da diagonal principal: %d\n", abaixo);
 }
+
